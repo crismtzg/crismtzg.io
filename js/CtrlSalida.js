@@ -22,10 +22,10 @@ function procesa() {
         (fecha.getMonth() + 1) + "/" +
         fecha.getFullYear();
 
-    salidaBoleta.textContent = "Boleta " + boleta;
-    salidaNombre.textContent = "Nombre " + nombre;
-    salidaGrupo.textContent = "Grupo " + grupo;
-    salidaMateria.textContent = "Materia " + materia;
-    salidaFecha.textContent = "Fecha " + FMT_DATE;
+    salidaBoleta.textContent = "Boleta: " + boleta;
+    salidaNombre.textContent = "Nombre: " + nombre;
+    salidaGrupo.textContent = "Grupo: " + grupo;
+    salidaMateria.textContent = "Materia: " + materia;
+    salidaFecha.textContent = "Fecha: " + FMT_DATE;
 
 }
