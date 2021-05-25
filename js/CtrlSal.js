@@ -1,3 +1,4 @@
+"use stric";
 export class CtrlSaludo {
     /** @param {string} nombre */
     calculaSaludo(nombre) {
