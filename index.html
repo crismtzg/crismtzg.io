@@ -14,13 +14,25 @@
         <h1>Saludo</h1>
         <p>
             <label>
+                Boleta
+                <input type="text" name="nombre">
+            </label>
+        </p>
+        <p>
+            <label>
                 Nombre
                 <input type="text" name="nombre">
             </label>
         </p>
         <p>
             <label>
-                Edad
+                Grupo
+                <input type="text" name="nombre">
+            </label>
+        </p>
+        <p>
+            <label>
+                Materia
                 <input type="text" name="edad">
             </label>
         </p>
@@ -35,9 +47,13 @@
             try {
                 evt.preventDefault();
                 const datos = new FormData(formSaludo);
+                const bol = datos.get("boleta");
                 const nom = datos.get("nombre");
-                const age = datos.get("edad");
-                var dato = "Nombre: " + nom + " Edad: " + age
+                const grup = datos.get("grupo");
+                const mat = datos.get("materia");
+
+                
+                var dato = "Nombre: " + nom + " : " + age
                 const saludo = ctrlSaludo.calculaSaludo(dato);
                 formSaludo.salida.value = saludo;
             } catch (error) {
