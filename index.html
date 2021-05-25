@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form id="formSaludo">
+    <form id="forma" action="javascript:procesa()">
         <h1>Saludo</h1>
         <p>
             <label>
@@ -36,32 +36,27 @@
                 <input type="text" name="materia">
             </label>
         </p>
+        <p>
+            <label accesskey="F">
+              Fecha entre 2021-01-24 y 2022-01-24<br>
+              <input name="fecha" type="date" autofocus required
+                     max="2022-01-24" min="2021-01-24">
+            </label>
+            <br><em>año-mes-día (ej. 2021-03-30)</em>
+          </p>
+
+
         <p><button>Calcular</button></p>
-        <p><output name="salida"></output></p>
+
+        <br><output id="salidaBoleta"></output>
+        <br><output id="salidaNombre"></output>
+        <br><output id="salidaGrupo"></output>
+        <br><output id="salidaMateria"></output>
+        <br><output id="salidaFecha"></output>
+
     </form>
     <mi-footer></mi-footer>
-    <script type="module">
-        import { CtrlSaludo } from "/js/CtrlSal.js";
-        const ctrlSaludo = new CtrlSaludo();
-        formSaludo.addEventListener("submit", evt => {
-            try {
-                evt.preventDefault();
-                const datos = new FormData(formSaludo);
-                const bol = datos.get("boleta");
-                const nom = datos.get("nombre");
-                const grup = datos.get("grupo");
-                const mat = datos.get("materia");
-
-
-                var dato = "Nombre: " + nom + " : " + age
-                const saludo = ctrlSaludo.calculaSaludo(dato);
-                formSaludo.salida.value = saludo;
-            } catch (error) {
-                console.log(error);
-                formSaludo.salida.value = error.message;
-            }
-        });
-    </script>
+    <script src="js/CtrlSalida.js"></script>
 </body>
 
 </html>
